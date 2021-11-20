@@ -6,17 +6,22 @@ import Card from '../Card';
 
 import { Container } from './styles';
 
-export default function List() {
+export default function List({ data }) {
   return (
-    <Container>
+    <Container done={data.done}>
       <header>
-        <h2>Tarefas</h2>
-        <button>
-          <MdAdd size={24} color='#FFF' />
-        </button>
+        <h2>{data.title} {data.done && <span>🙌</span>}</h2>
+
+        {data.creatable && (
+          <button>
+            <MdAdd size={24} color='#FFF' />
+          </button>)}
+        
       </header>
 
-      <Card />
+      <ul>
+        {data.cards.map(card => <Card key={card.id} data={card}/>)}
+      </ul>
 
     </Container>
   )
