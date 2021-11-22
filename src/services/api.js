@@ -99,12 +99,12 @@ export function loadLists() {
       cards: [
         {
           id: 14,
-          content: 'papapa nao sei oq',
-          labels: [],
+          content: 'Descrever uma aplicação',
+          labels: ['#13c'],
         },
         {
           id: 15,
-          content: 'aaa',
+          content: 'Criar um novo projeto',
           labels: ['#54e1f7'],
         },
         {

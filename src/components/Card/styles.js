@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   position: relative;
-  background-color: #FFF;
+  background-color: ${props => props.theme.colors.secondary};
   border-radius: 5px;
   margin-bottom: 10px;
   padding: 15px;
@@ -30,7 +30,7 @@ export const Container = styled.div`
   }
 
   ${props => props.isDragging && css`
-    border: 2px dashed rgba(0, 0, 0, 0.2);
+    border: 2px dashed ${props => props.theme.colors.text};
     padding-top: 31px;
     border-radius: 0;
     background: transparent;

@@ -16,50 +16,13 @@ export default createGlobalStyle`
 
   body {
     font: 14px 'Robot', sans-serif;
-    background: ${({ theme }) => theme.body};
-    color: ${({ theme }) => theme.text};
+    background: ${props => props.theme.colors.background};
+    color: ${props => props.theme.colors.text};
     -webkit-font-smoothing: antialiased !important;
     transition: background .4s ease;
   }
 
   ul {
     list-style: none;
-  }
-
-  .card {
-    background: ${({ theme }) => theme.toggleBorder};
-  }
-
-  .toggle {
-    -webkit-appearance: none;
-    position: absolute;
-    right: 15px;
-    width: 50px;
-    height: 25px;
-    background-color: #FFF;
-    border-radius: 50px;
-    outline: none;
-    cursor: pointer;
-    transition: .5s ease all;
-  }
-
-  .toggle:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: navy;
-    transition: .5s ease all;
-    border-radius: 50px;
-  }
-
-  .toggle:checked {
-    background-color: #212022;
-  }
-
-  .toggle:checked:before {
-    transform: translate(100%);
   }
 `;

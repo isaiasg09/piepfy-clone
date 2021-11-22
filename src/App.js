@@ -3,30 +3,27 @@ import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 
 import { ThemeProvider } from 'styled-components';
-import { lightTheme, darkTheme } from "./styles/theme";
 import GlobalStyle from './styles/global';
+
+import dark from './styles/themes/dark';
+import light from './styles/themes/light';
 
 import Header from "./components/Header";
 import Board from "./components/Board";
 
 function App() {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(light);
 
-  const toggleTheme = () => {
-    if (theme === 'light') {
-      setTheme('dark');
-    } else {
-      setTheme('light');
-    }
-  }
+  const toggleTheme = ()=>{
+    setTheme(theme.title === 'light' ? dark : light);
+  };
+  
 
   return (
-    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+    <ThemeProvider theme={theme}>
 
       <DndProvider backend={HTML5Backend}>
-          <Header>
-            <input type={'checkbox'} onClick={toggleTheme} className="toggle" />
-          </Header>
+          <Header toggleTheme={toggleTheme} />
           
           <Board />
           
