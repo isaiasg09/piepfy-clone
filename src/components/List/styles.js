@@ -5,10 +5,9 @@ export const Container = styled.div`
   height: 100%;
   flex: 0 0 320px;
   opacity: ${props => props.done ? 0.6 : 1};
-  background-color: ${props => props.done && '#e8ecf7' };
 
   & + div {
-    border-left: 1px solid rgba(0, 0, 0, 0.05);
+    border-left: 1px solid #7159c1;
   }
 
   header {
